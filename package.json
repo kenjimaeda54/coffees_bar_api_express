@@ -1,0 +1,19 @@
+{
+  "name": "services_peoples_api",
+  "version": "1.0.0",
+  "description": "Api to register services and responisble persons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenjimaeda54/services_peoples_api_express.git"
+  },
+  "author": "kenji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenjimaeda54/services_peoples_api_express/issues"
+  },
+  "homepage": "https://github.com/kenjimaeda54/services_peoples_api_express#readme"
+}
