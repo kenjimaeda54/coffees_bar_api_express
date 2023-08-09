@@ -5,7 +5,7 @@ import { Constants } from "../utils/Constants";
 import { AvatarsModels } from "../models/AvatarsModel";
 
 class AvatarsControllers {
-  async returnAllImages(_, res: Response) {
+  async returnAllAvatars(_, res: Response) {
     database.tryOpenRealm().then((realm) => {
       const avatars = realm.objects(Constants.avatarsRealmClass);
 

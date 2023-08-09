@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import "dotenv/config";
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.API_KEY_FIREBASE,
   authDomain: "uploadimagesapicoffee.firebaseapp.com",
   projectId: process.env.PROJECT_ID,
   storageBucket: "uploadimagesapicoffee.appspot.com",
