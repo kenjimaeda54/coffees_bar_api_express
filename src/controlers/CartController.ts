@@ -25,13 +25,9 @@ class CartController {
 
     database.tryOpenRealm().then((realm) => {
       const userObjectId = new Realm.BSON.ObjectID(userId as string);
-      const allCarts = realm.objects(
-        Constants.cartRealmClass
-      ) as unknown as CartModels[];
-      const findIndex = allCarts.findIndex((it) =>
-        it.userId.equals(userObjectId)
-      );
-      const cart = realm.objects(Constants.cartRealmClass)[findIndex];
+      const allCarts = realm.objects(Constants.cartRealmClass);
+
+      const cart = allCarts.filtered("userId == $0", userObjectId);
 
       return res.status(200).json(cart.toJSON());
     });
