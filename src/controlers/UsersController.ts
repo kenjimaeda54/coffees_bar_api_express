@@ -36,7 +36,10 @@ class UsersController {
       realm.write(() => {
         realm.create(Constants.usersRealmClass, user);
       });
-      res.status(200).json(user);
+
+      const userRealmDb = allUsers.filtered("email == $0", email);
+
+      res.status(200).json(userRealmDb.toJSON());
     });
   }
 
@@ -92,8 +95,6 @@ class UsersController {
     Database.tryOpenRealm().then((realm) => {
       const allUsers = realm.objects(Constants.usersRealmClass);
       const user = allUsers.filtered("email == $0", email);
-
-      console.log(allUsers.toJSON());
 
       if (user.length > 0) {
         const isCorrectUser = user

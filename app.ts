@@ -4,6 +4,7 @@ import avatarRouter from "./src/routes/avatar_routes";
 import middlewareError from "./src/middleware/middlewareError";
 import useRouter from "./src/routes/users_routes";
 import cartRouter from "./src/routes/cart_routes";
+import cors from "cors";
 
 class App {
   app;
@@ -14,7 +15,13 @@ class App {
     this.routes();
   }
 
-  middleware() {}
+  middleware() {
+    const corsOptions = {
+      origin: "*",
+    };
+
+    this.app.use(cors(corsOptions));
+  }
 
   routes() {
     this.app.use(express.json());
