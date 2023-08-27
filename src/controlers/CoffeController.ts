@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { CoffeeModel } from "../models/CoffeeModels";
 import database from "../database/open_database";
 import { Constants } from "../utils/Constants";
 

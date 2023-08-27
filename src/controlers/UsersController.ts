@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import validator from "validator";
 import Database from "../database/open_database";
 import { Constants } from "../utils/Constants";
-import { UsersModel } from "../models/UsersModel";
 import queryString from "query-string";
+import { UsersModel } from "../models/UsersModel";
 
 //para tratar erros usei async erros express
 //com o middleware que criei mais a lib não preciso me preocupar com erros

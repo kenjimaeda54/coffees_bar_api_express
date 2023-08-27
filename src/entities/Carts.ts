@@ -14,7 +14,7 @@ export class Cart extends Realm.Object<Cart> {
   };
 }
 
-export class Orders extends Realm.Object<Orders> {
+export class OrdersUser extends Realm.Object<OrdersUser> {
   static schema = {
     name: Constants.OrdersRealmClass,
     properties: {
@@ -23,6 +23,7 @@ export class Orders extends Realm.Object<Orders> {
       price: "string",
       quantity: "int",
       urlImage: "string",
+      coffeeId: "string",
     },
     primaryKey: "_id",
   };

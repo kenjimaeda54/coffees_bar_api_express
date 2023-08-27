@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import database from "../database/open_database";
 import { firebase } from "../firebase/firebase";
 import { Constants } from "../utils/Constants";
-import { AvatarsModels } from "../models/AvatarsModel";
 
 class AvatarsControllers {
   async returnAllAvatars(_, res: Response) {

@@ -1,15 +1,12 @@
 import { Request, Response } from "express";
 import database from "../database/open_database";
-import { firebase } from "../firebase/firebase";
 import { Constants } from "../utils/Constants";
-import { AvatarsModels } from "../models/AvatarsModel";
-import { CartModels, OrdersModel } from "../models/CartModel";
 
 class CartController {
   createCart(req: Request, res: Response) {
     const { cart } = req.body;
 
-    //maneira simples de trocar um object em javascript
+    //converter uma string em objectId
     cart.userId = new Realm.BSON.ObjectID(cart.userId);
 
     database.tryOpenRealm().then((realm) => {
