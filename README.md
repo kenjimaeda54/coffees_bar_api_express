@@ -1,11 +1,11 @@
 # Coffes Bar Api
-API Rest marktplace, possivel visualizar os caffes disponiveis,cadastrar um usuario,criar um carrinho de compra de caffes e visualizar os caffes comprados anterioremente por usuario
+API Rest markt place, possível visualizar os cafés disponíveis, cadastrar um usuário, criar um carrinho de compra   e visualizar os cafés comprados anteriormente por usuário
 
 
 ## Feature
 - Eu usei o Realm Db pra trabalhar com o banco de dados, vantagem e que não preciso de um TypeOrm para fazer as relações com o banco
-- Repara que estou usando a versão do squema e bem util,pois se precisar alterar alguma coisa  eu altero a versão e assim ja reflete um novo squema
-- ObjectId e uma identiddade especifca do realm para converter stirng para essa propriedade pode usar exemplo abaixo, Realm.BSON
+- Repara que estou usando a versão do squema é bem útil, pois se precisar alterar alguma coisa eu altero a versão e assim   reflete um novo squema
+- ObjectId e uma identidade específica do realm para converter string para essa propriedade pode usar exemplo abaixo, Realm.BSON
 
 ```typescript
 
@@ -58,8 +58,8 @@ export class Coffee extends Realm.Object<Coffee> {
 ```
 
 ##
-- Qualquer exceção que pode gerar eu usei um middleware que o asyn erros express, por isso não me preocupo caso no momento de fazer um get ou post retornar um erro
-
+- Qualquer exceção que pode gerar eu usei um middleware que o asyn erros express, por isso não me preocupo caso no momento de fazer um get ou post tratar esse erro
+- 
 ```typescript
   routes() {
     this.app.use(express.json());
@@ -96,9 +96,9 @@ export default new ErrorMiddleware();
 ```
 
 ##
-- Para pegar a query como parametro pode usar o requeset com o parametro query, como exemplo abaixo
-- E bom verificar caso o userId venha nullo
-- Eu iriei caputar o valor que esta na query userId
+- Para  pegar  parâmetro na rota pode usar o requeset com a palavra chama query, como exemplo abaixo
+- E bom verificar caso o userId venha nulo
+- Eu capturo o valor que esta na query  userId
 
 ```typescript
   // /carts/orders?userId= id do usuario
@@ -129,15 +129,15 @@ router.get("/orders", cartController.returnCart);
 
 ## Rotas disponiveis
 ### Avatars
-- /avatars ==> retorna todos os avatares salvos no firebase. Metodo Get
-- /avatars/id do avatar ==> retorna um avatar especifico. Metodo Get
+- /avatars ==> Retorna todos os avatares salvos no firebase. Metodo Get
+- /avatars/id do avatar ==> Retorna um avatar especifico. Metodo Get
 
 ### Coffess
-- /coffess ==> retorna todos os cafes. Metodo Get
-- /coffes/id do cafe ==> retona um cafe especifico. Metodo Get
+- /coffess ==> Retorna todos os cafés. Metodo Get
+- /coffes/id do cafe ==> Retorna um cafe especifico. Metodo Get
 
 ### Users
-- /users/sigin ==> cria o usuario precisa do body abaixo ,caso for sucesso retorna o usuario se não mensagem de erro. Metodo Post
+- /users/sigin ==> Cria o usuário precisa do body abaixo,caso for sucesso retorna o usuário se não mensagem de erro. Metodo Post
 
 ```json
 {
@@ -149,7 +149,7 @@ router.get("/orders", cartController.returnCart);
 }
 
 ```
-- /users/login ==> loga o usuario , precisa do body abaixo,retorna mensagem de erro ou dados do usuario. Metodo Post
+- /users/login ==> Loga o usuário, precisa do body abaixo, retorna mensagem de erro ou dados do usuário. Método Post
 
 ```json
 
@@ -158,12 +158,12 @@ router.get("/orders", cartController.returnCart);
 	"password": "Abaate5$"	
 }
 ```
-- /users/avatar?userId=id do usuario ==> atualia o avatar do usuario,retona mensagem de erro ou sucesso. Metodo Post
-- /users/name?userId=id do usuario ==> atualia o nome do usuario,retona mensagem de erro ou sucesso. Metodo Post
+- /users/avatar?userId=id do usuario ==> Atualiza o avatar do usuário, rentona mensagem de erro ou sucesso. Método Post
+- /users/name?userId=id do usuario ==> Atualiza o nome do usuário, retorna mensagem de erro ou sucesso. Método Post
 
 ### Carts
-- /carts/orders?userId= id do usuario ==> retonara os pedidos do usuario,como preço total a taxa e o id dele. Metodo Get
-- /carts ==> cria o carrinho, precisa do body abaixo, reotrna mensagem de sucesso ou erro. Metodo Post
+- /carts/orders?userId= id do usuario ==> Retornara os pedidos do usuário, como preço total, a taxa e o id dele. Método Get
+- /carts ==> Cria o carrinho, precisa do body abaixo, retorna mensagem de sucesso ou erro. Método Post
 
 ```json
 
