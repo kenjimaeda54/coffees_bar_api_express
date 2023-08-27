@@ -145,7 +145,7 @@ router.get("/orders", cartController.returnCart);
 	"name": " ",
 	"email": "test@gmail.com",
 	"avatarId":"64d189c6ac4ab510248b5187",
-"password": "pedro"
+        "password": "pedro"
 }
 
 ```
@@ -176,20 +176,20 @@ router.get("/orders", cartController.returnCart);
           "urlImage": "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg",
           "price": "R$ 8,00",
           "quantity": 3,
-			    "coffeeId":"64d0d6c060decb1e43f93dbb"
+	  "coffeeId":"64d0d6c060decb1e43f93dbb"
         },
         {
           "title": "Pingado com cholate",
           "urlImage": "https://cdn.abrahao.com.br/base/f4d/0e2/e7f/pingado.jpg",
           "price": "R$ 6,00",
           "quantity": 1,
-					"coffeeId": "64d0d6c060decb1e43f93dbb"
+	  "coffeeId": "64d0d6c060decb1e43f93dbb"
         }
 				],
         "priceCartTotal": "R$14,00",
-				 "userId": "64d2c46cc5e48e0957f5c196",
+        "userId": "64d2c46cc5e48e0957f5c196",
         "tax": "R$2,00"
-			 }
+       }
      
 	
 }
